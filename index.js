@@ -1,23 +1,19 @@
 // TODO: Rewrite with modulo
 function laufendesMaximum(v, k) {
-  for(let i = 0; i < v.length; i++) {
-    let currentMax = 0;
+  for(let i = 0; i <= (v.length - k); i++) {
+    let max = 0;
 
     for(let j = 0; j < k; j++) {
-      if(i > (v.length - k)) {
-        return // we are done with the algorithm
-      }
-
       const w = v[i + j];
 
-      if(currentMax < w) {
-        currentMax = w;
+      if(max < w) {
+        max = w;
       }
     }
 
-    console.log(currentMax);
+    console.log(max);
 
-    currentMax = 0;
+    max = 0;
   }
 }
 
