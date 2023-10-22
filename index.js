@@ -1,28 +1,28 @@
 function laufendesMaximum(v, k) {
-  const arr = [];
+  const values = [];
 
-  for(let i = 0; i <= (v.length - k); i++) {
-    let max = 0;
+  for(let index = 0; index <= (v.length - k); index++) {
+    let maxValue = 0;
 
     // walking through the window...
-    for(let j = 0; j < k; j++) {
-      const cur = v[i + j];
+    for(let offset = 0; offset < k; offset++) {
+      const currentValue = v[index + offset];
 
-      if (cur > max)
-        max = cur;
+      if (currentValue > maxValue)
+        maxValue = currentValue;
     }
 
-    arr.push(max);
+    values.push(maxValue);
 
-    max = 0; // reset value for the next run
+    maxValue = 0; // reset value for the next run
   }
 
-  return arr;
+  return values;
 }
 
 const v = [27, 9, 17, 2, 12, 8];
 const k = 3;
 
-const arr = laufendesMaximum(v, k)
+const values = laufendesMaximum(v, k)
 
-console.log(arr);
+console.log(values);
