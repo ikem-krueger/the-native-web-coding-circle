@@ -1,23 +1,28 @@
-// TODO: Rewrite with modulo
 function laufendesMaximum(v, k) {
+  const arr = [];
+
   for(let i = 0; i <= (v.length - k); i++) {
     let max = 0;
 
+    // walking through the window...
     for(let j = 0; j < k; j++) {
-      const w = v[i + j];
+      const cur = v[i + j];
 
-      if(max < w) {
-        max = w;
-      }
+      if (cur > max)
+        max = cur;
     }
 
-    console.log(max);
+    arr.push(max);
 
-    max = 0;
+    max = 0; // reset for the next run
   }
+
+  return arr;
 }
 
 const v = [27, 9, 17, 2, 12, 8];
 const k = 3;
 
-laufendesMaximum(v, k); // => [27, 17, 17, 12]
+const arr = laufendesMaximum(v, k)
+
+console.log(arr);
