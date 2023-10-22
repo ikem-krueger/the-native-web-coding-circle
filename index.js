@@ -14,7 +14,7 @@ function laufendesMaximum(v, k) {
 
     arr.push(max);
 
-    max = 0; // reset for the next run
+    max = 0; // reset value for the next run
   }
 
   return arr;
