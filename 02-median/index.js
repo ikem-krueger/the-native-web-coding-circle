@@ -1,5 +1,5 @@
-function laufendesMaximum(v, k) {
-  const values = [];
+function calculateRunningMedian(v, k) {
+  const median = [];
 
   for(let index = 0; index <= (v.length - k); index++) {
     let maxValue = 0;
@@ -12,17 +12,17 @@ function laufendesMaximum(v, k) {
         maxValue = currentValue;
     }
 
-    values.push(maxValue);
+    median.push(maxValue);
 
     maxValue = 0; // reset value for the next run
   }
 
-  return values;
+  return median;
 }
 
 const v = [27, 9, 17, 2, 12, 8];
 const k = 3;
 
-const values = laufendesMaximum(v, k)
+const median = calculateRunningMedian(v, k)
 
-console.log(values);
+console.log(median);
